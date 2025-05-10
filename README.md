@@ -1,4 +1,12 @@
+ModificacionOO
+Modificando el readme por que es parte de la tarea
+
+
+
+
+
 # FaceDetect
+
 
 This is a module for face detection with convolutional neural networks (CNNs). It uses a small CNN as a binary classifier to distinguish between faces and non-faces. A simple sliding window (with multiple windows of varying size) is used to locaize the faces in the image.
 
@@ -13,14 +21,7 @@ The network consists of 3 convolution layers
 
     Input: 32x32 black and white image
     1. Layer 1: 5x5 convolutions
-                4 feature maps
-    2. Layer 2: 3x3 convolutions
-                16 feature maps
-    3. Layer 3: 3x3 feature maps
-                32 feature maps
-    Layer 3 outputs 32 4x4 feature maps
-    4. Layer 4: Fully connected layer
-                600 units
+                             600 units
     5. Layer 5: Softmax layer
                 2 units
 
@@ -57,12 +58,4 @@ The final dataset consists of the 32,000 images from each class (positive and ne
 
 **Localization**
 
-The module uses a simple sliding window localizer. The input image is reshaped to (300,300). Square windows of side lengths 40,50... 100 are slid along the image. Each sub image seen through the window is reshaped to (32,32) and fed to the network. If the sub image is a face with a minimum confidence of 0.99, the window is marked in the mask. After running all different sized windows on the image, the final mask is blurred with a 50x50 Gaussian filter and binarized. This final binarized mask is used to extract only the faces from the image. The localizer returns two images: an image with only the faces and the raw mask (before blurring and binarization).
-
-**Demo**
-
-The repo includes a pre-trained model: face_model. This can directly be used for localization. Sample usage of this model with FaceDetect.py can be seen in demo.py. Running the demo should display the result of running the localizer on demo.jpg.
-Demos with other images can be seen here: https://youtu.be/N4GIGVnyNBo 
-
-Output of demo.py:
-![Alt text](demo_result.png?raw=true)
+The module uses a simple sliding window localizer. The input image is reshaped to (300,300). Square windows of side lengths 40,50... 100 are slid along the image. Each sub image seen through the window is reshaped to (32,32) and fed to the network. If the sub image is a face with a minimum confidence of 0.99, the window is marked in the mask. After running all different sized windows on the image, the final mask is bluThe repo includes a pre-trained model: face_model. This can directly be used for localization. Sample usage of this model with FaceDetect.py can be se
